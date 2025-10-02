@@ -7,7 +7,7 @@ def call(String project, String imageTag, String dockerHubUser) {
         sh """
             echo "Logging into Docker Hub..."
             docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
-            docker push ${dockerHubUser}/${projectName}:${imageTag}
+            docker push ${dockerHubUser}/${project}:${imageTag}
         """
     }
 }
