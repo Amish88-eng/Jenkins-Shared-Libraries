@@ -5,5 +5,5 @@ def call(String Project , String ImageTag, dockerhubuser){
                     passwordVariable:"DOCKERHUB_PASS")]){
                 sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
                 }
-    sh 'docker push $DOCKERHUB_USER/note-app:latest'
+    sh 'docker push $DOCKERHUB_USER/$Project:$ImageTag'
 }
